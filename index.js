@@ -71,7 +71,7 @@ app.use((req, res, next) => {
 
 // Додана функція для перевірки сігнатури JWT токена
 function verifyToken(token) {
-    const publicKey = fs.readFileSync('./public.pem', 'utf8'); // Замініть це на ваш шлях або використовуйте посилання для отримання публічного ключа
+    const publicKey = fs.readFileSync('./public.pem', 'utf8');
     try {
         const decoded = jwt.verify(token, publicKey, { algorithms: ['RS256'] });
         return decoded;
